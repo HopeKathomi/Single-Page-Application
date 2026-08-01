@@ -1,0 +1,15 @@
+{
+  "name": "single-page-application",
+  "version": "1.0.0",
+  "description": "A single page application for searching for definations of words",
+  "license": "MIT",
+  "author": "Hope Kathomi",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

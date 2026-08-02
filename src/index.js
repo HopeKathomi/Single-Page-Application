@@ -9,7 +9,7 @@ function getPhonetics(object) {
 }
 
 function getAudio(object) {
-  return object.phonetics[0].audio;
+  return object.phonetics[1].audio;
 }
 
 function getPartOfSpeech(meanings) {
@@ -85,18 +85,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const word = searchInput.value.trim();
     searchInput.value = "";
+
     if (!word) {
-      resultsContainer.classList.add("hidden");
+      resultsContainer.classList.add("hidden");//if no word is entered, hide results div
       return;
     }
     resultsContainer.classList.remove("hidden");
       
-
+    //process the json data from fetch method
     fetchWord(word).then((data) => {
       render(data[0], searchedWord, phonetics, audio, defination);
+      
       audio.addEventListener("click", (event) => {
-        // event.preventDefault();
-        // event.stopPropagation();
         const audioLink = getAudio(data[0]);
         if (audioLink) {
           const audio = new Audio(audioLink);

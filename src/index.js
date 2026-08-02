@@ -83,13 +83,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (event.key !== "Enter") return;
 
     const word = searchInput.value.trim();
+    searchInput.value = "";
     if (!word) return;
 
     fetchWord(word).then((data) => {
       render(data[0], searchedWord, phonetics, audio, defination);
       audio.addEventListener("click", (event) => {
         // event.preventDefault();
-        event.stopPropagation();
+        // event.stopPropagation();
         const audioLink = getAudio(data[0]);
         if (audioLink) {
           const audio = new Audio(audioLink);

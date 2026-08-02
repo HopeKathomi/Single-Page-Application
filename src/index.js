@@ -85,9 +85,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const word = searchInput.value.trim();
     searchInput.value = "";
-    if (!word) return;
-    resultsContainer.classList.toggle("hidden");
-    
+    if (!word) {
+      resultsContainer.classList.add("hidden");
+      return;
+    }
+    resultsContainer.classList.remove("hidden");
+      
 
     fetchWord(word).then((data) => {
       render(data[0], searchedWord, phonetics, audio, defination);

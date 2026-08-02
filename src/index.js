@@ -65,13 +65,14 @@ function getSynonym(synonym) {
 
 function render(object, searchedWord, phonetics, audio, defination) {
   console.log("ELEMENT: ", object);
-  searchedWord.innerHTML = `<p class="word_title">Word</p><p class="word">${object.word}</p>`;
-  phonetics.innerHTML = `<p class="phonetic_title">Phonetic</p><p class="phonetics">${getPhonetics(object)}</p>`;
+  searchedWord.innerHTML = `<p class="word_title">Word:</p><p class="word">${object.word}</p>`;
+  phonetics.innerHTML = `<p class="phonetic_title">Phonetic:</p><p class="phonetics"><b>${getPhonetics(object)}</b></p>`;
   audio.innerHTML = "<button class='audio_button'>Play pronunciation</button>";
   defination.innerHTML = getPartOfSpeech(object.meanings);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const resultsContainer = document.querySelector("#results_container");
   const searchInput = document.querySelector("#search_div");
   const searchedWord = document.querySelector("#searched_word_div");
   const phonetics = document.querySelector("#phonetics_div");
@@ -85,6 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const word = searchInput.value.trim();
     searchInput.value = "";
     if (!word) return;
+    resultsContainer.classList.toggle("hidden");
+    
 
     fetchWord(word).then((data) => {
       render(data[0], searchedWord, phonetics, audio, defination);

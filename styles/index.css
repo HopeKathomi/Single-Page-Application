@@ -1,6 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 #main_container{
@@ -35,6 +36,7 @@
     border-width: 2px;
     border-color: rgb(90, 90, 90);
     padding: 15px;
+    box-shadow: 4px 4px 4px rgba(169, 168, 168, 0.517);
 }
 .audio_button{
     background-color: rgb(95, 95, 241);
@@ -49,10 +51,58 @@
     border-top: 2px dotted #d1d5db;
     margin: 24px 0;
 }
-
+#word_intro_div{
+    display: flex;
+    flex-direction: column;
+}
+#phonetic_audio_div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+   
+}
+#phonetics_div{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    
+}
+#searched_word_div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 40px;
+}
 .synonyms_title{
     color: green;
 }
+.word_title{
+    font-weight: 600;
+    color: #7b7d80;
+}
+.phonetic_title{
+    font-size: 13px;
+    font-weight: 600;
+    color: #7b7d80;
+}
+.word{
+    font-size: 30px;
+    font-weight: 600; 
+}
 .example_title{
     color: blue;
+}
+
+#results_container{
+    box-shadow: 0px 0px 8px rgba(169, 168, 168, 0.517) ;
+    background-color: #ffffff;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    padding: 20px;
+    width: 70vw;
+}
+.hidden{
+    display: none;
 }

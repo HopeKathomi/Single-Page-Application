@@ -27,7 +27,7 @@ function getPartOfSpeech(meanings) {
 
 function getDefinitions(definitions) {
   console.log("DEF: ",definitions);
-  let html = "<ol>";
+  let html = "<ol class='definations_list'>";
 
   
   definitions.forEach((def) => {
@@ -44,22 +44,22 @@ function getExamples(def) {
       html += `
         <div class="example_div">
           <p class="example_title sub_title">Example:</p>
-          <p class="example">${def.example}</p>
+          <p class="example"><i>"${def.example}"</i></p>
         </div>`;
     }
   return html;
 } 
     
 function getSynonym(synonym) {
-  let html = "";
-  console.log("SYNONYM: ", synonym);
+  let html = "<div id='synonym_div'>";
 
   if (synonym.length > 0) {
-    html += "<p class='synonyms_title'>Synonyms</p>";
+    html += "<p class='synonyms_title'>Synonyms:</p>";
     synonym.forEach((synonym) => {
-      html += `<p class='synonyms'>${synonym}</p>`;
+      html += `<p class='synonyms'> ${synonym}</p>`;
     });
   }
+  html+="</div>";
   return html;
 }
 

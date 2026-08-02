@@ -106,3 +106,33 @@
 .hidden{
     display: none;
 }
+
+#defination_div h3{
+    margin-bottom: 10px;
+}
+
+.definations_list {
+    /* margin-left: 20px;
+    padding-left: 20px; */
+    line-height: 1.8;
+}
+
+.example{
+    display: flex;
+    flex-direction: column;
+    color: #7b7d80;
+}
+#synonym_div {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.synonyms {
+    margin: 0;
+    background-color: rgba(2, 56, 2, 0.349);
+    color: rgba(1, 85, 1, 0.99);
+    padding: 8px;
+    border-radius: 50px;
+}
